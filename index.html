@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Концертный тур</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .city-select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+        .tour-info {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Linkin Park tribute show</h1>
+        
+        <div class="tour-info">
+            <p>Весняний тур від Legenda Folium</p>
+        </div>
+
+        <select id="citySelect" class="city-select">
+            <option value="">Оберіть місто</option>
+            <option value="https://docker.com.ua/afisha/tryb-yut-linkin-park-gurt-legenda-folium-2025-03-20/">Київ - 20 березня</option>
+            <option value="https://poltava.karabas.com/linkin-park-tribute-show-40/">Полтава - 21 березня</option>
+            <option value="https://dnipro.karabas.com/linkin-park-tribute-show-41/">Дніпро - 22 березня</option>
+            <option value="https://zaporizhzhia.karabas.com/linkin-park-tribute-show-39/">Запоріжжя - 23 березня</option>
+            <option value="https://kharkiv.karabas.com/linkin-park-tribute-show-42/">Харків - 28 березня</option>
+            <!-- Добавьте свои города и ссылки -->
+        </select>
+
+        <a href="#" id="buyButton" class="buy-button" style="display: none;">Придбати квиток</a>
+    </div>
+
+    <script>
+        const citySelect = document.getElementById('citySelect');
+        const buyButton = document.getElementById('buyButton');
+
+        citySelect.addEventListener('change', function() {
+            if (this.value) {
+                buyButton.style.display = 'block';
+                buyButton.href = this.value;
+            } else {
+                buyButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
